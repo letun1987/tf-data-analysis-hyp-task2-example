@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
-from hyppo.ksample import MMD
+#from hyppo.ksample import MMD
+from scipy.stats import ks_2samp
 
 
 chat_id = 436734951 # Ваш chat ID, не меняйте название переменной
@@ -9,5 +10,6 @@ def solution(x: np.array, y: np.array) -> bool:
     # Измените код этой функции
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
-    stat, pvalue = MMD().test(x, y)
-    return pvalue < 0.03
+    alpha = 0.03
+    stat, pval = ks_2samp(x, y)
+    return pval < alpha
