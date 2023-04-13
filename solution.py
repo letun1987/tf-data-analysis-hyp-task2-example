@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-#from hyppo.ksample import MMD
 from scipy.stats import ks_2samp
 
 
